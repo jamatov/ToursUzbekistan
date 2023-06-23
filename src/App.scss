@@ -1,0 +1,1067 @@
+  @import '~bootstrap/scss/bootstrap';
+
+$yellow : #FD7900;
+
+@font-face {
+  font-family: "Acrom-Light";
+  src: url(./Fonts/Acrom-Light.ttf);
+}
+
+@font-face {
+  font-family: "Acrom-Regular";
+  src: url(./Fonts/Acrom-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Acrom-Bold";
+  src: url(./Fonts/Acrom-Bold.ttf);
+}
+
+.App {
+  overflow-x: hidden;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Acrom-Regular";
+
+  a{
+    text-decoration: none;
+  }
+
+  ul{
+    margin: 0;
+    padding: 0;
+    li{
+      list-style-type: none;
+    }
+  }
+}
+
+.container{
+  max-width: 1270px;
+}
+
+
+
+.Navbar{
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  padding: 25px 0;
+  background:#000;
+  border-radius: 0px 0px 30px 30px;
+  transition: 0.3s ease-in;
+
+  .nav-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{
+      align-items: center;
+      display: flex;
+      gap: 30px;
+
+      li{
+        padding: 10px 0;
+        a{
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #FFFFFF;
+        }
+      }
+
+      .dropdown{
+        position: relative;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 5px 0;
+        // transition: 0.3s ease-in !important;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        cursor: pointer;
+
+        .tours-drop{
+          position: absolute;
+          top: 30px;
+          display: none;
+          border-radius: 20px;
+          background: #060606;
+          transition: 0.3s ease-in !important;
+          border: 1px solid #fff;
+
+          
+          .border{
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+          }
+
+          a{
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 14px 13px 14px 20px;
+
+          }
+
+        }
+
+        &:hover{
+          .tours-drop{
+            transition: 0.3s ease-in !important;
+
+
+            display: block;
+  
+          }
+        }
+      }
+
+    }
+
+    .nav__toggler{
+      // display: flex;
+      display: none;
+      flex-direction: column;
+      align-items: flex-end;
+      z-index: 9;
+      cursor: pointer;
+      div{
+        width: 2rem;
+        height: 0.2rem;
+        margin: 0.2rem;
+        background: $yellow;
+        transition: 0.4s ease-in;
+      }
+      .line3{
+        width: 1.5rem;
+      }
+    }
+
+    .toggle{
+      div{
+        background: #FFFFFF !important;
+      }
+      .line1{
+        transform: rotate(-45deg) translate(-9px, 5px);
+        color: #FFFFFF !important;
+
+      }
+      .line2{
+        opacity: 0;
+      }
+      .line3{
+        transform: rotate(45deg) translate(-8px, -5px);
+
+        width: 2rem !important;
+        color: #FFFFFF !important;
+
+      }
+    }
+    .responsive-select{
+      display: none;
+    }
+
+    select{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      height: 39px;
+      border: 2px solid #FFFFFF;
+      border-radius: 40px;
+      background: none;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      color: #FFFFFF;
+      option{
+        color: #000;
+      }
+    }
+
+  }
+}
+
+.PaddinTop{
+  padding-top: 180px;
+}
+
+.navbarActive{
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 0px 0px 30px 30px;
+  transition: 0.3s ease-in;
+  padding: 20px 0;
+
+
+  .nav-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{
+      align-items: center;
+      display: flex;
+      gap: 30px;
+
+      li{
+        a{
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #000;
+        }
+      }
+      .dropdown{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: #000;
+        cursor: pointer;
+        padding: 0;
+        
+        .tours-drop{
+          position: absolute;
+          top: 20px;
+        }
+          
+      
+      
+      }
+    
+    }
+
+    
+
+    select{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      height: 39px;
+      border: 2px solid #000;
+      border-radius: 40px;
+      background: none;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000;
+    }
+
+  }
+}
+
+.Homehead{
+  margin-bottom: 120px;
+  .carusel{
+    .carusel-item{
+      img{
+        height: 100vh;
+        object-fit: cover;
+      }
+      .carusel-caption{
+        bottom: 43%;
+
+        h3{
+          font-family: "Acrom-Bold";
+          font-weight: 700;
+          font-size: 56px;
+          line-height: 67px;
+          text-transform: capitalize;
+          color: #FD7900;
+        }
+
+        p{
+          font-family: 'Acrom-Bold';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 34px;
+        }
+      }
+    }
+  }
+}
+
+.ToursCards{
+  margin-bottom: 120px;
+  .row{
+    h2{
+      font-family: "Acrom-Bold";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 43px;
+      color: #060606;
+      margin-bottom: 40px;
+    }
+    .card{
+      background: #FFFFFF;
+      box-shadow: 0px 262px 105px rgba(0, 0, 0, 0.01), 0px 148px 89px rgba(0, 0, 0, 0.03), 0px 66px 66px rgba(0, 0, 0, 0.05), 0px 16px 36px rgba(0, 0, 0, 0.06), 0px 0px 0px rgba(0, 0, 0, 0.06);
+      border-radius: 20px;
+      margin-bottom: 20px;
+      .card-body{
+        .d-flex{
+          gap: 10px;
+          margin-bottom: 15px;
+          font-family: 'Acrom-Light';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: #060606;
+        }
+
+        h3{
+          font-style: normal;
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 34px;
+          text-transform: capitalize;
+          color: #060606;
+          margin-bottom: 20px;
+        }
+
+        .price{
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: #060606;
+
+          span{
+            font-family: "Acrom-Bold";
+            font-weight: 600;
+          }
+        }
+
+        .moreBtn {
+          width: 120px;
+          height: 39px;
+          display: flex;
+          background: none;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 14px 20px;
+          gap: 10px;
+          border: 2px solid #FD7900;
+          border-radius: 40px;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #FD7900;
+        }
+      }
+    }
+  }
+}
+
+.TransportInfo{
+  margin-bottom: 120px;
+  h2{
+    font-family: 'Acrom-Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    color: #060606;
+    margin-bottom: 40px;
+  }
+  .row{
+    // gap: 30px;
+    
+    .p1{
+      padding-right: 15px;
+    }
+
+    .p2{
+      padding-left: 15px;
+
+      
+
+      p{
+        margin-bottom: 40px;
+      }
+    }
+
+    .card-bodyy{
+      img{
+        width: 100%;
+      }
+
+      h3{
+        font-family: 'Acrom-Bold';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+        text-transform: capitalize;
+        color: #060606;
+        margin-bottom: 40px;
+      }
+
+      .salon-img{
+        margin-bottom: 40px;
+      }
+
+      p{
+        font-family: 'Acrom-Light';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #060606;
+      }
+    }
+  }
+}
+
+.TourInfo{
+  margin-bottom: 120px;
+  h3{
+    font-family: "Acrom-Bold";
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    color: #000000;
+    margin-bottom: 40px;
+  }
+
+  .row{
+    align-items: center;
+    
+    img{
+      width: 100%;
+    }
+
+    .card-info-body{
+      height: 100%;
+    }
+
+    .info-body{
+      height: 100%;
+      padding: 0px 30px;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .texts{
+        margin-bottom: 40px;
+      }
+
+      p{
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #060606;
+      }
+    }
+
+    .info-cards{
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+
+      .card{
+        padding: 15px 17px;
+        gap: 10px;
+        border: 1px solid #BDBDBD;
+        border-radius: 20px;
+
+        .card-body{
+          padding: 0;
+
+          span{
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+            color: #060606;
+          }
+
+          .d-flex{
+            margin-bottom: 15px;
+            gap: 10px;
+            align-items: center;
+
+            img{
+              width: 22px;
+              height: 22px;
+            }
+
+            p{
+              margin: 0;
+              font-family: "Acrom-Bold";
+              font-style: normal;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 19px;
+              color: #060606;
+            }
+          }
+        }
+      }
+    } 
+  }
+}
+
+// Samarqand About Start
+
+.samarqandAboutSection {
+  margin-bottom: 120px;
+  h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    color: #000;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .samarqandAboutContent {
+    align-items: center;
+    div {
+      p {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #060606;
+        margin-bottom: 54px;
+      }
+
+      a {
+        button{
+          padding: 0 20px;
+          width: 120px;
+          height: 39px;
+          border: 2px solid #FD7900;
+          border-radius: 40px;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #FD7900;
+          background: none;
+        }
+      }
+    }
+    div {
+      img {
+        width: 100%;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+// Contact Start
+
+.samarqandContactSection {
+  margin-bottom: 120px;
+  .contactTitle {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    color: #000;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .samarqandContactContent {
+    display: flex;
+    justify-content: center;
+    div {
+      form {
+        margin-right: 30px;
+        div {
+          input {
+            width: 330px;
+            height: 39px;
+            padding: 10px  20px;
+            background: #fff;
+            border: 1px solid #828282;
+            border-radius: 30px;
+            margin-bottom: 20px;
+          }
+          textarea {
+            width: 330px;
+            min-height: 130px;
+            padding: 10px 20px;
+            background: #fff;
+            border: 1px solid #828282;
+            border-radius: 30px;
+            margin-bottom: 20px;
+          }
+        }
+
+        button {
+          width: 131px;
+          height: 39px;
+          background: #FD7900;
+          border: 2px solid #FD7900;
+          border-radius: 40px;
+
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #fff;
+        }
+      }
+    }
+
+    .samarqandContactInfo {
+      div {
+        margin-bottom: 30px;
+        h2 {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          color: #060606;
+        }
+
+        p {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          color: #060606;
+        }
+        a {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          color: #060606;
+        }
+      }
+    }
+  }
+}
+
+.ContactForm{
+  margin-bottom: 120px;
+  h2{
+    color: #000;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .row{
+    align-items: center;
+    form{
+      input {
+        height: 39px;
+        padding: 10px  20px;
+        background: #fff;
+        border: 1px solid #828282;
+        border-radius: 30px;
+        margin-bottom: 20px;
+      }
+      textarea {
+        min-height: 130px;
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #828282;
+        border-radius: 30px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        width: 131px;
+        height: 39px;
+        background: #FD7900;
+        border: 2px solid #FD7900;
+        border-radius: 40px;
+
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: #fff;
+      }
+    }
+
+    .contact-info{
+      div {
+        margin-bottom: 30px;
+        h3 {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          color: #060606;
+        }
+
+        p {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          color: #060606;
+        }
+        a {
+          display: block;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          color: #060606;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
+}
+
+// Google Map
+
+.googleMap {
+  width: 100%;
+  height: 200px;
+}
+
+// Footer Start
+
+
+
+// About Start 
+
+.aboutSection {
+  padding: 100px 0;
+  .aboutTitle {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    color: #000;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .aboutContent {
+    .aboutInfo {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50px;
+      h2 {
+        width: 519px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #060606;
+        margin-right: 30px;
+      }
+      img {
+        width: auto;
+        margin-right: 30px;
+        // width: 520px;
+        height: auto;
+        border-radius: 20px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+// Buxoro Header Start 
+
+.buxoroHeader {
+  background: url(./Images/buxoroheader.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 100px;
+
+  .buxoroHeaderContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    h3 {
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 67px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #FD7900;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 34px;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
+
+// Marshrut Start
+
+.marshrutSection {
+  margin-bottom: 100px;
+  h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    color: #000;
+    margin-bottom: 40px;
+  }
+
+  .marshrutContent {
+    .reverse {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .marshrutContentInfo {
+      display: flex;
+      justify-content: center;
+      img {
+        border-radius: 20px;
+        width: 100%;
+        margin-right: 30px;
+        margin-bottom: 40px;
+      }
+
+      .marshrutInfo {
+        margin-right: 30px;
+        h2 {
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 34px;
+          text-transform: capitalize;
+          color: #060606;
+          margin-bottom: 40px;
+        }
+        p {
+          width: 630px;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          color: #060606;
+        }
+      }
+    }
+  }
+}
+
+// Xiva Header Start
+
+.xivaHeader {
+  background: url(./Images/xorazmheader.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 100px;
+  .xivaHeaderContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    h3 {
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 67px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #FD7900;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 34px;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
+
+// Samarqand Page Start 
+
+.samarqandHeader {
+  background: url(./Images/samarkandheader.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 100px;
+
+  .samarqandHeaderContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    h3 {
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 67px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #FD7900;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 34px;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
+
+// Transport Section Start 
+
+.transSection {
+  margin: 100px 0;
+  h2 {
+    color: #060606;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  .transContent {
+    display: flex;
+    justify-content: center;
+
+    .transInfo {
+      margin-right: 30px;
+      img {
+        width: 100%;
+        height: 410px;
+        border-radius: 30px;
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        color: #060606;
+        font-size: 28px;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-bottom: 40px;
+      }
+
+      p {
+        color: #060606;
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.MoreTourInfo{
+  margin-bottom: 12px;
+  h2{
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  .row{
+    margin-bottom: 40px;
+    img{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .info{
+      h3{
+        color: var(--black, #060606);
+        font-size: 28px;
+        font-family: "Acrom-Bold";
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-bottom: 40px;
+      }
+
+      p{
+        color: var(--black, #060606);
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.AboutInfo{
+  margin-bottom: 120px;
+  h2{
+    color: #000;
+    font-size: 36px;
+    font-family: "Acrom-Bold";
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .row{
+    align-items: center;
+    
+    img{
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .texts{
+      p{
+        color: var(--black, #060606);
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.Footer{
+  padding: 100px 0;
+  background: var(--black, #060606);
+  .footer-body{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+
+    div{
+      p{
+        color: var(--white, #FFF);
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
