@@ -41,6 +41,10 @@ $yellow : #FD7900;
   }
 }
 
+.carousel-control-next, .carousel-control-prev{
+  display: none !important;
+}
+
 .container{
   max-width: 1270px;
 }
